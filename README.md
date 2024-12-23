@@ -4,7 +4,7 @@
 
 The objective of this case is to evaluate your skills in software development. We are looking for a full-stack developer, so we expect you to be able to work on both the frontend and the backend of a web application. Don't think about styling to much, we are more interested in the functionality of your application.
 
-You have approximately 4 hours to work on this. We know this is tight deadline so don't feel bad if you can't do everything in this timespan. We are more interested in the quality of your work than the quantity.
+You have approximately 4 hours to work on this. We know this could be a tight deadline so don't feel bad if you can't do everything in this timespan. We are more interested in the quality of your work than the quantity.
 The minimum requirements are to implement the candidate endpoints, the vacancies list in the frontend and one fully functional (validated) form to create or update a vacancy.
 
 You can start by cloning this repository and working on the tasks described below. You can choose to make this into a mono-repo or create a separate repository for the frontend project.<br />
