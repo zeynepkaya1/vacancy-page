@@ -1,31 +1,38 @@
-import { Column, CreateDateColumn, Entity, Index, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  Index,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity()
 export class Vacancy {
   @PrimaryGeneratedColumn('uuid')
-  uuid: string
+  uuid: string;
 
   @CreateDateColumn({ precision: 3 })
-  createdAt: Date
+  createdAt: Date;
 
   @UpdateDateColumn({ precision: 3 })
-  updatedAt: Date
+  updatedAt: Date;
 
   @Column({ type: 'varchar' })
-  company: string
+  company: string;
 
   @Index()
   @Column({ type: 'varchar' })
-  title: string
+  title: string;
 
   @Column({ type: 'varchar', nullable: true })
-  description: string | null
+  description: string | null;
 
   @Index()
   @Column({ type: 'date', nullable: true })
-  startDate: string | null
+  startDate: string | null;
 
   @Index()
   @Column({ type: 'date', nullable: true })
-  endDate: string | null
+  endDate: string | null;
 }

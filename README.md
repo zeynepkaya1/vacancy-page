@@ -13,16 +13,17 @@ Please send us a link to your repository/repositories before the meeting. This w
 
 ### Backend
 
-This repository contains a simple backend application that has three endpoints:  one that returns a list of vacancies, one that returns a single vacancy and one that allows you to create a vacancy. <br />
+This repository contains a simple backend application that has three endpoints: one that returns a list of vacancies, one that returns a single vacancy and one that allows you to create a vacancy. <br />
 Your task is to create two new modules. One that allows you to create, read, update and delete candidates, as well as one to match them with vacancies. The candidate entity should have the following fields:
-- First name *
-- Last name *
-- Email *
+
+- First name \*
+- Last name \*
+- Email \*
 - Phone
 - Date of birth
 - Other fields you think are relevant
 
-Fields marked with * are required.
+Fields marked with \* are required.
 
 The data can be stored in the index.ts file under FAKE DATA as well.
 

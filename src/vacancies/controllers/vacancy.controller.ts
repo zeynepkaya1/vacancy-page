@@ -1,6 +1,14 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common'
-import { CreateVacancyDto } from '../dto/create-vacancy.dto'
-import { VacancyService } from '../services/vacancy.service'
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
+import { CreateVacancyDto } from '../dto/create-vacancy.dto';
+import { VacancyService } from '../services/vacancy.service';
 
 @Controller('vacancies')
 export class VacancyController {
@@ -8,16 +16,16 @@ export class VacancyController {
 
   @Post()
   create(@Body() createVacancyDto: CreateVacancyDto) {
-    return this.vacancyService.create(createVacancyDto)
+    return this.vacancyService.create(createVacancyDto);
   }
 
   @Get()
   findAll() {
-    return this.vacancyService.findAll()
+    return this.vacancyService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.vacancyService.findOne(id)
+    return this.vacancyService.findOne(id);
   }
 }

@@ -1,23 +1,28 @@
-import { IsOptional, IsString, IsDateString, IsNotEmpty } from 'class-validator'
+import {
+  IsOptional,
+  IsString,
+  IsDateString,
+  IsNotEmpty,
+} from 'class-validator';
 
 export class CreateVacancyDto {
   @IsString()
   @IsNotEmpty()
-  company: string
+  company: string;
 
   @IsString()
   @IsNotEmpty()
-  title: string
+  title: string;
 
   @IsString()
   @IsOptional()
-  description?: string | null
+  description?: string | null;
 
   @IsDateString()
   @IsOptional()
-  startDate?: string | null
+  startDate?: string | null;
 
   @IsDateString()
   @IsOptional()
-  endDate?: string | null
+  endDate?: string | null;
 }
