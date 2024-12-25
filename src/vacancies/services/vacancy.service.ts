@@ -1,8 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 // import { InjectRepository } from '@nestjs/typeorm'
 // import { Repository } from 'typeorm'
 import { Vacancy } from '../entities/vacancy.entity';
 import { CreateVacancyDto } from '../dto/create-vacancy.dto';
+import { UpdateVacancyDto } from '../dto/update-Vacancy.dto';
 import { vacancies } from 'src/FAKE DATA';
 
 @Injectable()
@@ -57,5 +58,37 @@ export class VacancyService {
     // }
 
     return vacancy;
+  }
+
+  async update(
+    uuid: string,
+    updateVacancyDto: UpdateVacancyDto,
+  ): Promise<Vacancy> {
+    const index = vacancies.findIndex((vacancy) => vacancy.uuid === uuid);
+
+    if (index === -1) {
+      throw new NotFoundException(`Vacancy with UUID ${uuid} not found`);
+    }
+
+    const updatedVacancy = {
+      ...vacancies[index],
+      ...updateVacancyDto,
+      updatedAt: new Date(),
+    };
+
+    vacancies[index] = updatedVacancy;
+    return updatedVacancy;
+  }
+
+  async delete(id: string): Promise<{ message: string }> {
+    const index = vacancies.findIndex((vacancy) => vacancy.uuid === id);
+
+    if (index === -1) {
+      throw new NotFoundException(`Vacancy with id ${id} not found`);
+    }
+
+    vacancies.splice(index, 1);
+
+    return { message: `Vacancy with id ${id} deleted successfully` };
   }
 }

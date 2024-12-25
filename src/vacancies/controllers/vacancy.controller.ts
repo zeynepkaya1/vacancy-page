@@ -9,6 +9,7 @@ import {
 } from '@nestjs/common';
 import { CreateVacancyDto } from '../dto/create-vacancy.dto';
 import { VacancyService } from '../services/vacancy.service';
+import { UpdateVacancyDto } from '../dto/update-Vacancy.dto';
 
 @Controller('vacancies')
 export class VacancyController {
@@ -27,5 +28,15 @@ export class VacancyController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.vacancyService.findOne(id);
+  }
+
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() updateVacancyDto: UpdateVacancyDto) {
+    return this.vacancyService.update(id, updateVacancyDto);
+  }
+
+  @Delete(':id')
+  delete(@Param('id') id: string) {
+    return this.vacancyService.delete(id);
   }
 }
