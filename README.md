@@ -1,46 +1,24 @@
-# Studaro hiring case
+# Vacancy Web Page Backend
 
-## Objective
+This is the backend service for the Vacancy Management application.
 
-The objective of this case is to evaluate your skills in software development. We are looking for a full-stack developer, so we expect you to be able to work on both the frontend and the backend of a web application. Don't think about styling to much, we are more interested in the functionality of your application.
+## Technologies
 
-You have approximately 4 hours to work on this. We know this could be a tight deadline so don't feel bad if you can't do everything in this timespan. We are more interested in the quality of your work than the quantity.
-The minimum requirements are to implement the candidate endpoints, the vacancies list in the frontend and one fully functional (validated) form to create or update a vacancy.
+- Node.js: JavaScript runtime for server-side development.
 
-You can start by cloning this repository and working on the tasks described below. You can choose to make this into a mono-repo or create a separate repository for the frontend project.<br />
-You can include any additional information you think is relevant in the README file. <br />
-Please send us a link to your repository/repositories before the meeting. This way, we can take a look at your work in advance.
+- Nest.js: Framework for building scalable Node.js applications.
 
-### Backend
+- TypeScript: Strongly-typed JavaScript.
 
-This repository contains a simple backend application that has three endpoints: one that returns a list of vacancies, one that returns a single vacancy and one that allows you to create a vacancy. <br />
-Your task is to create two new modules. One that allows you to create, read, update and delete candidates, as well as one to match them with vacancies. The candidate entity should have the following fields:
+- Axios: HTTP client for API integration.
 
-- First name \*
-- Last name \*
-- Email \*
-- Phone
-- Date of birth
-- Other fields you think are relevant
+## Prerequisites
 
-Fields marked with \* are required.
+- Node.js (v16 or higher)
 
-The data can be stored in the index.ts file under FAKE DATA as well.
+- pnpm
 
-### Frontend
-
-The frontend application is a simple Vue.js application that displays a list of vacancies and allows you to create a new one. <br />
-The list should be sortable by the fields `title` and `created_at`, both in ascending and descending order. <br />
-Develop a form to create or update vacancies as well. This can be one form or two separate forms, this choice is up to you. We will ask for your decision process later. <br />
-Use the Zod library to validate the forms. You can find the documentation [here](https://zod.dev/).
-
-The candidates or matches don't have to be included in the frontend project as long as you can demonstrate that the endpoints are working.
-
-## About this repository
-
-### Description
-
-This repository uses the [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Installation
 
 ### Project setup
 
@@ -58,9 +36,12 @@ $ pnpm run start
 $ pnpm run start:dev
 ```
 
-### Resources
+## API Endpoints
 
-Check out a few resources that may come in handy when working with NestJS:
+Vacancy-Page.postman_collection.json file has all the endpoints included in the project.
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- To dive deeper and get more hands-on experience, check out the official video [courses](https://courses.nestjs.com/).
+### Base URL:
+
+```bash
+http://localhost:3000/
+```
