@@ -13,6 +13,7 @@ import { UpdateVacancyDto } from '../dto/update-Vacancy.dto';
 
 @Controller('vacancies')
 export class VacancyController {
+  // Inject service
   constructor(private readonly vacancyService: VacancyService) {}
 
   @Post()
@@ -38,5 +39,9 @@ export class VacancyController {
   @Delete(':id')
   delete(@Param('id') id: string) {
     return this.vacancyService.delete(id);
+  }
+  @Get('match/:id')
+  async matchVacancies(@Param('id') id: string) {
+    return this.vacancyService.matchVacancies(id);
   }
 }

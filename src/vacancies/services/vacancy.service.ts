@@ -5,10 +5,12 @@ import { Vacancy } from '../entities/vacancy.entity';
 import { CreateVacancyDto } from '../dto/create-vacancy.dto';
 import { UpdateVacancyDto } from '../dto/update-Vacancy.dto';
 import { vacancies } from 'src/FAKE DATA';
+import { CandidateService } from '../../candidates/services/candidate.service';
 
 @Injectable()
 export class VacancyService {
-  constructor() {}
+  // Inject service
+  constructor(private readonly candidateService: CandidateService) {}
   // What it would be if we were using a database
   // @InjectRepository(Vacancy)
   // private readonly vacancyRepository: Repository<Vacancy>,
@@ -90,5 +92,19 @@ export class VacancyService {
     vacancies.splice(index, 1);
 
     return { message: `Vacancy with id ${id} deleted successfully` };
+  }
+
+  async matchVacancies(id: string): Promise<Vacancy[]> {
+    // Get the candidate by id
+    const candidate = await this.candidateService.findOne(id);
+    if (!candidate) {
+      throw new NotFoundException(`Candidate with ID ${id} not found`);
+    }
+
+    // Get all vacancies
+    const vacancies = await this.findAll();
+
+    // Filter vacancies by matching title
+    return vacancies.filter((vacancy) => vacancy.title === candidate.title);
   }
 }
