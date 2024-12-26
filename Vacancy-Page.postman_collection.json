@@ -130,6 +130,27 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "match candid with vacancies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/vacancies/match/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"vacancies",
+								"match",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
